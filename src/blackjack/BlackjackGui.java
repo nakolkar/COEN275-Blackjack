@@ -9,6 +9,15 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+import javax.swing.BoxLayout;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BlackjackGui {
 
@@ -42,46 +51,117 @@ public class BlackjackGui {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(139, 69, 19));
+		frame.setResizable(false);
+		frame.setBackground(new Color(0, 128, 0));
 		frame.setBounds(100, 100, 600, 419);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel dealerPanel = new JPanel();
+		dealerPanel.setBackground(new Color(0, 128, 0));
 		dealerPanel.setBounds(6, 6, 588, 190);
 		frame.getContentPane().add(dealerPanel);
 		dealerPanel.setLayout(null);
 		
 		JPanel deckPanel = new JPanel();
-		deckPanel.setBounds(506, 21, 60, 80);
+		deckPanel.setBackground(new Color(0, 128, 0));
+		deckPanel.setBounds(506, 21, 73, 107);
 		dealerPanel.add(deckPanel);
+		
+		JLabel deckLbl = new JLabel();
+		deckPanel.add(deckLbl);
+		deckLbl.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/back.gif"));
 		
 		JLabel dealerLbl = new JLabel("Dealer");
 		dealerLbl.setBounds(6, 6, 60, 16);
 		dealerPanel.add(dealerLbl);
 		
 		JPanel dealerHandPanel = new JPanel();
-		dealerHandPanel.setBounds(131, 45, 300, 80);
+		dealerHandPanel.setBounds(100, 45, 365, 97);
+		dealerHandPanel.setBackground(new Color(0, 128, 0));
 		dealerPanel.add(dealerHandPanel);
-		dealerHandPanel.setLayout(new GridLayout(1, 5, 0, 0));
+		dealerHandPanel.setLayout(null);
+		
+		
+		
+		JLabel card2 = new JLabel();
+		card2.setHorizontalAlignment(SwingConstants.TRAILING);
+		card2.setBounds(27, 0, 73, 97);
+		card2.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/qs.gif"));
+		dealerHandPanel.add(card2);
+		
+		JLabel card3 = new JLabel();
+		card3.setBounds(129, 0, 73, 97);
+		card3.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/tc.gif"));
+		dealerHandPanel.add(card3);
+		
+		JLabel card4 = new JLabel();
+		card4.setBounds(214, 0, 73, 97);
+		card4.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/3d.gif"));
+		dealerHandPanel.add(card4);
+		
+		JLabel card1 = new JLabel();
+		card1.setBounds(0, 0, 73, 97);
+		card1.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/js.gif"));
+		dealerHandPanel.add(card1);
+		
+		/*JLabel card5 = new JLabel();
+		card5.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/ah.gif"));
+		dealerHandPanel.add(card5);*/
 		
 		JPanel playerPanel = new JPanel();
+		playerPanel.setBackground(new Color(0, 128, 0));
 		playerPanel.setBounds(6, 201, 588, 190);
 		frame.getContentPane().add(playerPanel);
 		playerPanel.setLayout(null);
 		
 		JPanel playerHandPanel = new JPanel();
-		playerHandPanel.setBounds(131, 45, 300, 80);
+		playerHandPanel.setBounds(100, 45, 365, 97);
+		playerHandPanel.setBackground(new Color(0, 128, 0));
 		playerPanel.add(playerHandPanel);
-		playerHandPanel.setLayout(new GridLayout(1, 5, 0, 0));
+		playerHandPanel.setLayout(new BoxLayout(playerHandPanel, BoxLayout.X_AXIS));
+		
+		JLabel card1P = new JLabel();
+		card1P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/js.gif"));
+		playerHandPanel.add(card1P);
+		
+		JLabel card2P = new JLabel();
+		card2P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/qs.gif"));
+		playerHandPanel.add(card2P);
+		
+		JLabel card3P = new JLabel();
+		card3P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/tc.gif"));
+		playerHandPanel.add(card3P);
+		
+		JLabel card4P = new JLabel();
+		card4P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/3d.gif"));
+		playerHandPanel.add(card4P);
+		
+		/*JLabel card5P = new JLabel();
+		card5P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/ah.gif"));
+		playerHandPanel.add(card5P);*/
 		
 		JPanel optionsPanel = new JPanel();
+		optionsPanel.setBackground(new Color(0, 128, 0));
 		optionsPanel.setBounds(462, 22, 120, 102);
 		playerPanel.add(optionsPanel);
 		optionsPanel.setLayout(new GridLayout(3, 2, 0, 0));
 		
 		JButton standBtn = new JButton("Stand");
+		standBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("clicked!");
+			}
+		});
 		standBtn.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		JButton hitBtn = new JButton("Hit");
+		hitBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("clicked!");
+			}
+		});
 		hitBtn.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		JButton splitBtn = new JButton("Split");
 		splitBtn.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
@@ -105,7 +185,8 @@ public class BlackjackGui {
 		playerPanel.add(balanceLbl);
 		
 		JPanel betPanel = new JPanel();
-		betPanel.setBounds(6, 97, 65, 87);
+		betPanel.setBackground(new Color(0, 128, 0));
+		betPanel.setBounds(6, 82, 78, 102);
 		playerPanel.add(betPanel);
 		betPanel.setLayout(new GridLayout(0, 2, 0, 0));
 		
