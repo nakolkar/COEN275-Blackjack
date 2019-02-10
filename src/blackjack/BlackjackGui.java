@@ -71,7 +71,7 @@ public class BlackjackGui {
 		
 		JLabel deckLbl = new JLabel();
 		deckPanel.add(deckLbl);
-		deckLbl.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/back.gif"));
+		//deckLbl.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/back.gif"));
 		
 		JLabel dealerLbl = new JLabel("Dealer");
 		dealerLbl.setBounds(6, 6, 60, 16);
@@ -88,22 +88,22 @@ public class BlackjackGui {
 		JLabel card2 = new JLabel();
 		card2.setHorizontalAlignment(SwingConstants.TRAILING);
 		card2.setBounds(27, 0, 73, 97);
-		card2.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/qs.gif"));
+		//card2.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/qs.gif"));
 		dealerHandPanel.add(card2);
 		
 		JLabel card3 = new JLabel();
 		card3.setBounds(129, 0, 73, 97);
-		card3.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/tc.gif"));
+		//card3.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/tc.gif"));
 		dealerHandPanel.add(card3);
 		
 		JLabel card4 = new JLabel();
 		card4.setBounds(214, 0, 73, 97);
-		card4.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/3d.gif"));
+		//card4.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/3d.gif"));
 		dealerHandPanel.add(card4);
 		
 		JLabel card1 = new JLabel();
 		card1.setBounds(0, 0, 73, 97);
-		card1.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/js.gif"));
+		//card1.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/js.gif"));
 		dealerHandPanel.add(card1);
 		
 		/*JLabel card5 = new JLabel();
@@ -123,19 +123,19 @@ public class BlackjackGui {
 		playerHandPanel.setLayout(new BoxLayout(playerHandPanel, BoxLayout.X_AXIS));
 		
 		JLabel card1P = new JLabel();
-		card1P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/js.gif"));
+		//card1P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/js.gif"));
 		playerHandPanel.add(card1P);
 		
 		JLabel card2P = new JLabel();
-		card2P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/qs.gif"));
+		//card2P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/qs.gif"));
 		playerHandPanel.add(card2P);
 		
 		JLabel card3P = new JLabel();
-		card3P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/tc.gif"));
+		//card3P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/tc.gif"));
 		playerHandPanel.add(card3P);
 		
 		JLabel card4P = new JLabel();
-		card4P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/3d.gif"));
+		//card4P.setIcon(new ImageIcon("/Users/andy/COEN275/COEN275-Blackjack/bin/blackjack/cards/3d.gif"));
 		playerHandPanel.add(card4P);
 		
 		/*JLabel card5P = new JLabel();
