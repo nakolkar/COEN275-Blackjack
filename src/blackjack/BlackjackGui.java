@@ -90,6 +90,7 @@ public class BlackjackGui {
 		JLabel card2 = new JLabel();
 		card2.setHorizontalAlignment(SwingConstants.TRAILING);
 		card2.setBounds(27, 0, 73, 97);
+
 		
 		card2.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/cards/qs.gif")).getImage()));
 		dealerHandPanel.add(card2);
